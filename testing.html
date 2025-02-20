@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <style>
+
+        body{
+            margin:0;
+            height:200vh;
+            overflow-x:hidden;
+            width:100vw;
+        }
+
+.div{
+    display:inline-flex;
+    margin-left:100px;
+    margin-top:100px;
+    background-color: rgb(28, 29, 32);
+    border:0.4px solid black;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height:100px;
+    width:100px;
+    overflow: hidden;
+    z-index:9;
+    border-radius:50%;
+}
+
+.fill{
+    height:200px;
+    width:150px;
+    border-radius: 50%;
+    background-color: rgb(69, 92, 233);
+    position : absolute;
+    top:-210%;
+    z-index:90;
+    animation :pull 1s infinite ease-in-out alternate;
+}
+
+.maindiv {
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    background-color: aqua;
+    z-index:80;
+}
+
+@keyframes pull 
+{
+
+    from {
+        
+        top:-210%;
+    }
+    to {
+        
+        top:200%;
+    }
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: lightgray;
+    pointer-events: auto; /* Ensure container is interactive */
+}
+
+.overflow-content {
+    width: 300px;
+    height: 300px;
+    background: blue;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    
+    /* Makes only the visible part interactive */
+    -webkit-mask-image: linear-gradient(black, black);
+    mask-image: linear-gradient(black, black);
+}
+
+
+
+dotlottie-wc {
+    height:100px;
+    width:100px;
+}
+
+.card-container
+{
+    margin-left:100px;
+    margin-top:100px;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.card{
+    height:100px;
+    width:100px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: aqua;
+    transform-style: preserve-3d;
+    transform : rotateY(0deg);
+ animation : transformAB 1s ease-in-out alternate infinite;
+
+    position: relative;
+}
+
+@keyframes transformAB {
+    to {
+        transform : rotateY(180deg)
+    }
+}
+
+.front{
+    background-color: blue;
+    color:white;
+    height:100%;
+    width:100%;
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+
+}
+
+.back{
+    background-color: black;
+    color:white;
+    height:100%;
+    width:100%;
+    position: absolute;
+    transform : rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card:hover{
+    transform : rotateY(180deg);
+}
+
+
+::-webkit-scrollbar {
+    display:none;
+}
+
+
+  
+  
+    .animate-line {
+      animation: draw-line 1s linear infinite;
+    }
+
+    .svg_one{
+        transform: rotateY(90deg);
+        transform-origin: center;
+    }
+  
+    @keyframes draw-line {
+        0% {
+          stroke-dashoffset: 100; /* Fully hidden */
+        }
+        50% {
+          stroke-dashoffset: 0;   /* Fully drawn (slower phase) */
+        }
+        80% {
+          stroke-dashoffset: -100; /* Leaving (faster phase) */
+        }
+        100% {
+          stroke-dashoffset: -100; /* Fully disappeared */
+        }
+      }
+
+
+
+      .side {
+        height:100vh;
+        right:0px;
+        background-color: rgb(28,29,32);
+        position: fixed;
+        top:0;
+        right:0;
+        background-attachment: scroll;
+        }
+
+    .rthree{
+        height:150%;
+        width:775%;
+        content:"";
+        top:50%;
+        position:absolute !important;
+        border-radius:50%;
+        transform: translate(-0%,-50%);
+        background-color: rgb(28, 29, 32);
+        display:block
+    }
+
+
+    @keyframes side {
+        from{
+            width:6vw;
+        }
+
+        to{
+            width:1px;
+        }
+    }
+
+
+    .rtwo {
+        animation : 0.85s cubic-bezier(.7, 0, .2, 1) forwards 1  side;
+    }
+
+    .side 
+    {
+        transform: translate(calc(100% + 6vw),0) rotate(0.001deg);
+        animation : judo 0.8s forwards 1   cubic-bezier(.7, 0, .2, 1);
+    }
+
+    @keyframes judo {
+        from {
+            transform: translate(calc(100% + 6vw),0) rotate(0.001deg);
+        }
+
+        to{
+            transform: translate(0,0) rotate(0.001deg);
+        }
+    }
+
+
+      
+    </style>
+</head>
+<body>
+   <div class="div">
+    <div class="fill"></div>
+   </div>
+   <div class="container">
+    <div class="overflow-content"></div>
+</div>
+<div class="card-container">
+    <div class="card">
+        <div class="front">
+            <span class="frontspan">Front</span>
+        </div>
+        <div class="back">
+            <span class="backspan">Back</span>
+        </div>
+    </div>
+</div>
+    <svg width="500" height="100" viewBox="0 0 500 100" >
+        <line x1="0" y1="0" x2="0" y2="100" stroke="black" stroke-width="4"
+              stroke-dasharray="100" stroke-dashoffset="100"
+              class="animate-line" />
+      </svg>
+<div class="side">
+    <div class="innerdivside" style="position:relative ; height:100%;width:320px;background-color:rgb(28,29,32);z-index:3; padding-left:15vw">
+    </div>
+    <div class="rone" style="position:absolute;height:100%;left:1px;top:0;transform : translateX(-100%)">
+        <div class="rtwo" style="height:100%;width:6vw;will-change:width;background-color:none">
+            <div class="rthree"></div>
+        </div>
+    </div>
+</div>
+<script>
+</script>
+</body>
+</html>

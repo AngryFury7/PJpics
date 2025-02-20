@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Wheel Background Transition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+
+        body{
+
+            margin:0;
+            background-color: rgb(50, 43, 43);
+        }
+
+
+
+        .container{
+            margin:200px auto;
+            height:200px;
+            width:250px;
+            perspective: 1000px;;
+            position:relative;
+            transform : rotateX(00deg);
+        }
+
+        .wheel {
+            position: absolute;
+            height:100%;
+            width:100%;
+            transform-style : preserve-3d;
+            transform: rotateY(0deg) ;
+            animation : wheela ease-in  0s  infinite forwards ;
+            /**/
+        }
+
+        .item{
+            display:block;
+            position: absolute;
+            height:200px;
+            width:20px;
+            opacity:1;
+            transform : rotateX(10deg);
+            border-radius:20px;
+        }
+
+        .a{
+            transform:rotateY(0deg) rotateX(0deg) translateZ(250px);
+            background-color: blue;
+        }
+
+        .b{
+            transform:rotateY(60deg) rotateX(0deg) translateZ(250px);
+            background-color: red;
+        }
+
+        .c{
+            transform:rotateY(120deg) rotateX(0deg) translateZ(250px);
+            background-color: yellow;
+        }
+        .d{
+            transform:rotateY(180deg) rotateX(0deg) translateZ(250px);
+            background-color: green;
+        }
+        .e{
+            transform:rotateY(240deg) rotateX(0deg) translateZ(250px);
+            background-color: white;
+        }
+        .f{
+            transform:rotateY(300deg) rotateX(0deg) translateZ(250px);
+            background-color:orange;
+        }
+
+
+        @keyframes wheel {
+            from{
+                transform : rotateY(0deg) rotateX(00deg);
+            }
+            to{
+                transform : rotateY(-360deg) rotateX(0deg);
+            }
+        }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<button class="add">
+    Add
+</button>
+<button class="kam">
+    KAM
+</button>
+<button class="see">
+    See
+</button>
+
+<script>
+    let Arrayone = [7];
+    document.querySelector('.add').addEventListener('click',()=>{
+        console.log('pressed');
+          let l = Arrayone.length;
+          let i = Arrayone[l-1] + 1;
+          Arrayone.push(i);
+    })
+
+    document.querySelector('.see').addEventListener('click',()=>{
+        console.log(Arrayone);
+    })
+
+
+</script>
+      
+
+
+</body>
+</html>

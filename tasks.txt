@@ -1,0 +1,23 @@
+change the properties of css of the loading-screen words and its children // status:not-changed.
+add that camera making animation for the bigscreen and its light will display the loading words// status:not-added;
+add the draggable="false" for each of the elements especially for a  // status:not added
+add media queries for setteling the credits and nav bar to adapt on zooming , resizig windows the screen ask chatgpt  // status : not done
+the roatate logo function is called 5 secods so make sure the loading-screen takes 4 or less seconds// status : not done 
+make the pointer events of hamburger-menu , none when not showing // staus : updated
+*****************dikkat display flex ki thi *******************
+change the index of the fixed nav bar when side bar opens// not set 
+add that flip animation to reveal their location in the changing-imagaes section for a duration then flip them back // status:not done 
+also you can add some sort of button to reveal thier location then flip back on reclick // status : not done 
+change the color of nav menu items per image change // status : not done 
+change how the background-image changes and see what can you do // status : not done 
+opmitmise the code base // status : not done 
+fix that weird behaviour of the mouse hover effect on the menu button when you move fast over it enter and exit very fast // status : not solved ;
+move the eye logo on side when not clicked // status : not done 
+on scroll like 200px hide the extra content // status : not done 
+change the classes of next and prev as they are interchanged // status : not-changed but no problem is arising so you can think of this as issue solved;
+fix that unexpected behaviour of the hamburger menu // status : not done
+there is an issue with the ball number one when it is ball active is 2 so check what is causing this error // status : not done
+fix that hamburger menu for the tablet screen and mobile screens// status : not done ;
+optimise the JS and css code // staus : trying to do .......
+add that active  task functionality to side bar // status : not done 
+add functionality to menu button // status : not done

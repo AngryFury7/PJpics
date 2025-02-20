@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<style>
+    body{
+        background-color: rgb(33, 25, 25);
+        margin:0px;
+        padding:0px;
+        
+        
+    }
+    ::-webkit-scrollbar{
+        display:none;
+    }
+
+    .main-div{
+        height: 100vh;
+        width:100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .pps-div {
+        position: relative;
+        height:100px;
+        width:100px;
+        background-color: transparent;
+        perspective: 1000px;
+        border:rgb(75, 63, 63) 1px solid ;
+        border-radius: 8px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        transform: rotateZ(0deg);
+    }
+
+    .holder {
+        position: absolute;
+        transform-style: preserve-3d;
+        height:100px;
+        width:100px;
+        background-color: white;
+        transform : rotateZ(0deg);
+    }
+
+
+
+    .cards{
+        position: absolute;
+        border: 1px solid white;
+        height:100%;
+        width:100%;
+        transform-origin: center;
+        border-radius:50%;
+        background-color: transparent !important;
+        color:white;
+        transform: rotateZ(0deg);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .one{
+        transform-origin: center;
+        transform: translateZ(200px) translateX(-400px) translateY(0px) ;
+        background-color: blue;
+    }
+
+    .two{
+        transform-origin: center;
+        transform: rotateZ(0deg) translateZ(0px) translateX(-282.842px) translateY(-282.842px) ;
+        background-color: rgb(0, 255, 157);
+    }
+
+    .three{
+        transform-origin: center;
+
+        transform: rotateZ(0deg) translateZ(0) translateX(0px) translateY(-400px);
+        background-color: rgb(255, 0, 85);
+    }
+
+    .four{
+        transform-origin: center;
+
+        transform: rotateZ(0deg) translateZ(0) translateX(282.842px) translateY(-282.842px);
+        background-color: rgb(123, 255, 0);
+    }
+
+
+    .five{
+        transform-origin: center;
+
+        transform: rotateZ(0deg) translateZ(0) translateX(400px) translateY(0px);
+        background-color: rgb(255, 60, 0);
+    }
+
+    .six{
+        transform-origin: center;
+
+        transform: rotateZ(0deg) translateZ(0) translateX(282.842px) translateY(282.842px);
+        background-color: gray;
+    }
+
+    .seven{
+        transform-origin: center;
+
+        transform: rotateZ(0deg) translateZ(0) translateX(0px) translateY(400px);
+        background-color: rgb(97, 152, 169);
+    }
+
+    .eight{
+        transform-origin: center;
+
+        transform: rotateZ(0deg) translateZ(0) translateX(-282.842px) translateY(282.842px);
+        background-color: rgb(9, 42, 3);
+    }
+
+    @keyframes rotate {
+        from {
+            transform:  rotateZ(0deg);
+        }
+
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+
+    .content-two {
+        height:50px;width:300px;position:relative;background-color:transparent;border:0px solid white;
+    }
+
+    .thm-one {
+        position: absolute;
+        transform: rotateZ(-45deg);
+        height: 50px;
+        width: 300px;
+        background-color: transparent;
+        transform-style: preserve-3d;
+    }
+
+
+
+    .card {
+        position:absolute;
+        aspect-ratio: 1;
+        width:0vw;
+        border-radius:0px;
+        border:1px solid black;
+        transform: rotateZ(0deg);
+    }
+
+    .ek{
+        transform: translateX(-115vw) translateY(0px);
+    }
+
+    .do{
+        transform: translateX(-81.6vw) translateY(-81.6vw);
+    }
+
+    .teen{
+        transform: translateX(0px) translateY(-115vw);
+    }
+
+    .char{
+        transform: translateX(81.6vw) translateY(-81.6vw);
+    }
+
+    .panch{
+        transform: translateX(115vw) translateY(0px);
+    }
+
+    .ch{
+        transform: translateX(81.6vw) translateY(81.6vw);
+    }
+
+    .saath{
+        transform: translateX(0px) translateY(115vw);
+    }
+
+    .aath{
+        transform: translateX(-81.6vw) translateY(81.6vw);
+    }
+
+    .center-disk{
+        animation : main 16s ease-in-out infinite forwards;
+        transform: rotateZ(0deg);
+    }
+
+    @keyframes main {
+        from {
+            transform: rotateZ(0deg);
+        }
+
+        to{
+            transform: rotateZ(360deg);
+        }
+    }
+
+
+   
+
+
+</style>
+</head>
+<body>
+   <div class="main-div">
+    <div class="pps-div">
+        <div class="holder">
+            <div class="cards one">One</div>
+            <div class="cards two">
+                <div class="content-two">
+                     <div class="thm-one" ></div>
+                 </div>
+            </div>
+            <div class="cards three">three</div>
+            <div class="cards four">four</div>
+            <div class="cards five">five</div>
+            <div class="cards six">six</div>
+            <div class="cards seven">seven</div>
+            <div class="cards eight">eight</div>
+        </div>
+    </div>
+   </div>
+
+   <div class="div-cneter" style="height:100px ; width:100px ; display:flex; align-items:center;justify-content:center;background-color:red ; display:none">
+    <div class="hmm" style="height:40px ; width:40px;background-color:white;position:relative">
+        <div class="h" style="position:absolute;height:0px; width:0px;background-color:blue;top:50%;left:50%">
+            <div class="k" style="position:relative;height:0px ; width:0px ; background-color:green">
+                <div class="j" style="position:absolute;left:-20px;top:-20px;height:40px;width:40px;background-color:purple"></div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <div class="second-main" style="height:100vh;width:100vw;position:relative;background-color:rgb(45, 39, 39);">
+    <div class="footer" style="overflow : hidden;position:absolute;bottom:0px;top:69.2vh;width:100%;background-color:red">
+        <div class="wheel-top-wrap" style="height:100%;width:100%;background-color:rgb(79,73,73);">
+            <div class="wheel-outer-cont" style="aspect-ratio:1;width:245vw;background-color:white;margin-left:-72.5vw;display:flex;flex-direction:row;align-items:center;justify-content:center;">
+                <div class="center-point" style=" position:relative;height:0px;width:0px;background-color:red">
+                    <div class="center-disk" style="position:absolute;height:0px;width:0px;background-color:gray">
+                        <div class="card ek">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:transparent">
+                                    <div class="content-one" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-one" style="position:absolute;height:100%;width:100%;transform:rotateZ(-90deg);background-color:red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="card do">
+                             <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:transparent">
+                                    <div class="content-two" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-two" style="position:absolute;height:100%;width:100%;transform:rotateZ(-45deg);background-color:lightblue"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="card teen">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:transparent">
+                                    <div class="content-three" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-three" style="position:absolute;height:100%;width:100%;transform:rotateZ(0deg);background-color:lightgreen"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card char">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:transparent">
+                                    <div class="content-four" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-four" style="position:absolute;height:100%;width:100%;transform:rotateZ(45deg);background-color:lightpink"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card panch">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:none">
+                                    <div class="content-five" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-five" style="position:absolute;height:100%;width:100%;transform:rotateZ(90deg);background-color:lightcoral"></div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
+<!--                         <div class="card ch">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:transparent">
+                                    <div class="content-six" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-six" style="position:absolute;height:100%;width:100%;transform:rotateZ(135deg);background-color:aqua"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>  -->
+                        
+                            <div class="card ch">
+                                <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                    <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:none">
+                                        <div class="content-five" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                            <div class="img-five" style="position:absolute;height:100%;width:100%;transform:rotateZ(135deg);background-color:gold"></div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        <div class="card saath">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:transparent">
+                                    <div class="content-seven" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-seven" style="position:absolute;height:100%;width:100%;transform:rotateZ(180deg);background-color:black"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="card aath">
+                            <div class="card-dot" style="position:relative;height:0px;width:0px">
+                                <div class="card-content" style="position:absolute;left:-10.5vw;top:-6.5vw;height:13vw;width:21vw;background-color:none">
+                                    <div class="content-eight" style="height:100%;width:100%;position:relative;background-color:transparent">
+                                        <div class="img-eight" style="position:absolute;height:100%;width:100%;transform:rotateZ(225deg);background-color:rgb(12, 67, 67)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</body>
+</html>

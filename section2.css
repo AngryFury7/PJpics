@@ -1,0 +1,58 @@
+.section {
+    display:flex;
+}
+.changing-images{
+    background-color: lightpink;
+    height:20dvh;
+    display : flex;
+    flex-direction:row;
+    align-items : center;
+}
+
+.image-container-medium
+{
+    height:80%;
+    flex:1;
+    background-color:lightpink;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+.images-wrap
+{
+    height:90%;
+    flex:1;
+    background-color:lightpink;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.bg-images {
+    height:90%;
+    flex:1;
+    background-color: red;
+    border-radius:0%;
+    border:none;
+}
+
+.scroll-animation{
+    height:110%;
+    min-width:50px;
+    flex:0.3;
+    background-color: blue;
+    margin-inline:10px;
+}
+
+.first-img{
+    margin-left:10px;
+    margin-right:10px;
+}
+.second-img,.third-img,.fourth-img,.fifth-img{
+    margin-inline:10px;
+}
+.sixth-img{
+    margin-left:10px;
+    margin-right:10px;
+}
